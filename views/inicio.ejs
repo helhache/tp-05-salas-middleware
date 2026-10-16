@@ -1,0 +1,17 @@
+<section>
+  <h1>Reservas de salas de estudio</h1>
+  <p>
+    Este sitio permite consultar las salas de estudio disponibles y reservar
+    temporalmente un turno para estudiar en grupo.
+  </p>
+  <p>Salas disponibles:</p>
+  <ul>
+    <% salas.forEach((sala) => { %>
+      <li><%= sala %></li>
+    <% }) %>
+  </ul>
+  <p class="acciones">
+    <a class="boton" href="/reservas">Ver reservas</a>
+    <a class="boton boton-secundario" href="/reservas/nueva">Reservar una sala</a>
+  </p>
+</section>

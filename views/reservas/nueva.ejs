@@ -1,0 +1,61 @@
+<section>
+  <p class="seccion"><%= seccion %></p>
+  <h1>Nueva reserva</h1>
+
+  <% if (errores.length > 0) { %>
+    <div class="errores" role="alert">
+      <p>Revisá los siguientes datos:</p>
+      <ul>
+        <% errores.forEach((error) => { %>
+          <li><%= error %></li>
+        <% }) %>
+      </ul>
+    </div>
+  <% } %>
+
+  <form class="formulario" action="/reservas" method="post">
+    <div class="campo">
+      <label for="estudiante">Estudiante</label>
+      <input type="text" id="estudiante" name="estudiante" value="<%= valores.estudiante || '' %>" required>
+    </div>
+
+    <div class="campo">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" value="<%= valores.email || '' %>" required>
+    </div>
+
+    <div class="campo">
+      <label for="sala">Sala</label>
+      <select id="sala" name="sala" required>
+        <option value="">Elegí una sala</option>
+        <% salas.forEach((sala) => { %>
+          <option value="<%= sala %>" <%= valores.sala === sala ? "selected" : "" %>><%= sala %></option>
+        <% }) %>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" name="fecha" value="<%= valores.fecha || '' %>" required>
+    </div>
+
+    <div class="campo">
+      <label for="turno">Turno</label>
+      <select id="turno" name="turno" required>
+        <option value="">Elegí un turno</option>
+        <% turnos.forEach((turno) => { %>
+          <option value="<%= turno %>" <%= valores.turno === turno ? "selected" : "" %>><%= turno %></option>
+        <% }) %>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="personas">Cantidad de personas</label>
+      <input type="number" id="personas" name="personas" min="1" max="6" step="1" value="<%= valores.personas || '' %>" required>
+    </div>
+
+    <button type="submit">Reservar</button>
+  </form>
+
+  <p><a href="/reservas">Volver al listado</a></p>
+</section>

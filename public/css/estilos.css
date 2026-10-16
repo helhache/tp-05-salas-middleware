@@ -1,0 +1,238 @@
+:root {
+  --fondo: #f6f7f9;
+  --superficie: #ffffff;
+  --texto: #1f2933;
+  --suave: #5f6b7a;
+  --primario: #1d4ed8;
+  --primario-oscuro: #1e3a8a;
+  --borde: #d5dbe3;
+  --error-fondo: #fdecec;
+  --error-texto: #8a1c1c;
+  --foco: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--texto);
+  background: var(--fondo);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primario);
+}
+
+/* Foco visible para navegación con teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+}
+
+.saltar {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background: var(--superficie);
+}
+
+.saltar:focus {
+  left: 1rem;
+}
+
+.encabezado {
+  background: var(--primario-oscuro);
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.encabezado a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.encabezado a:hover {
+  text-decoration: underline;
+}
+
+.marca {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.encabezado ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.seccion {
+  margin: 0;
+  color: var(--suave);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  margin-top: 0.25rem;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.boton,
+button {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 2px solid var(--primario);
+  border-radius: 6px;
+  background: var(--primario);
+  color: #fff;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton-secundario {
+  background: transparent;
+  color: var(--primario);
+}
+
+.tarjetas {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.tarjeta h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+
+.tarjeta p {
+  margin: 0.25rem 0;
+  color: var(--suave);
+}
+
+.vacio {
+  background: var(--superficie);
+  border: 1px dashed var(--borde);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.filtro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detalle {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.detalle dt {
+  font-weight: 600;
+}
+
+.detalle dd {
+  margin: 0;
+}
+
+.formulario {
+  display: grid;
+  gap: 1rem;
+  max-width: 460px;
+}
+
+.campo {
+  display: grid;
+  gap: 0.3rem;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font: inherit;
+  background: var(--superficie);
+}
+
+.errores {
+  background: var(--error-fondo);
+  color: var(--error-texto);
+  border-left: 4px solid var(--error-texto);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.errores p,
+.errores ul {
+  margin: 0.25rem 0;
+}
+
+.pie {
+  border-top: 1px solid var(--borde);
+  padding: 1rem;
+  text-align: center;
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+.pie p {
+  margin: 0.2rem 0;
+}
+
+.solicitud {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.8rem;
+}

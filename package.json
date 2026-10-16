@@ -1,0 +1,24 @@
+{
+  "name": "tp-05-salas-middleware",
+  "version": "1.0.0",
+  "description": "Trabajo práctico 05 - Pipeline de middleware en Express: reservas de salas de estudio",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "ejs",
+    "morgan"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^7.0.1",
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1",
+    "morgan": "^1.12.1"
+  }
+}

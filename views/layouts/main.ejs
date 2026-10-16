@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= titulo %> | Salas de estudio</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="encabezado">
+    <p class="marca"><a href="/">Salas de estudio</a></p>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/reservas">Reservas</a></li>
+        <li><a href="/reservas/nueva">Nueva reserva</a></li>
+        <li><a href="/estado">Estado</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <%- body %>
+  </main>
+
+  <footer class="pie">
+    <p>Trabajo práctico 05 · Pipeline de middleware en Express</p>
+    <p class="solicitud">Solicitud: <%= solicitudId %></p>
+  </footer>
+</body>
+</html>
